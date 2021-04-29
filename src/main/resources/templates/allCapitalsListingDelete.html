@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2 th:text="${PageHeading}"></h2>
+
+<div class="allCapitals" th:unless="${#lists.isEmpty(allCapitals)}">
+<table>
+    <tbody>
+    <tr th:each="cap : ${allCapitals}">
+        <td th:text="${cap.getId()}"></td>
+        <td th:text="${cap.getName()}"></td>
+        <td><a th:href="@{/capital/editByView/{id} (id=${cap.id})}">Edit</a></td>
+        <td><a th:href="@{/capital/deleteById/{id} (id=${cap.id})}">Delete</a></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</body>
+</html>
