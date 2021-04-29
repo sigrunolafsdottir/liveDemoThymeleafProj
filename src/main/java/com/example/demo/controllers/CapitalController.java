@@ -31,6 +31,8 @@ public class CapitalController {
         return name + " is Saved";
     }
 
+    //adding some comments
+
 
 
     @GetMapping("/addByView")
